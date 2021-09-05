@@ -59,7 +59,7 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Data");
+        databaseReference = firebaseDatabase.getReference("sname");
         getdata();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -89,12 +89,11 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
     }

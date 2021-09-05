@@ -2,13 +2,21 @@ package com.example.billbook;
 
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -23,20 +31,26 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-public class Activity2 extends AppCompatActivity {
-    TextView fname, semail, scontact, x, total;
+
+public class Activity2<firebaseDatabase, databaseReference> extends AppCompatActivity {
+    private TextView fname, semail, scontact, x, total;
     Button mail;
     EditText EmailAddress, cname;
     Date date = new Date();
 
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("sname");
         fname = findViewById(R.id.fname);
-        String name = getIntent().getStringExtra("keyname");
-        fname.setText(name);
+        getdata();
+
+        //String name = getIntent().getStringExtra("keyname");
 
         semail = findViewById(R.id.semail);
         String email = getIntent().getStringExtra("keysemail");
@@ -93,9 +107,24 @@ public class Activity2 extends AppCompatActivity {
 
             };
         });
+
         StrictMode.ThreadPolicy policy= new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+    }
 
-
+    private void getdata() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String name = snapshot.getValue(String.class);
+                Log.d("------------------------------------------------------",name);
+                fname.setText(name);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("-----------------------------------------------------------","abc");
+                Toast.makeText(Activity2.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
