@@ -8,6 +8,7 @@ Android lab mini project
 
 - [@krupalvora](https://www.github.com/krupalvora)
 - [@vivek992](https://www.github.com/vivek992)
+- [@harshals21](https://www.github.com/harshals21)
 
   
 ## License
