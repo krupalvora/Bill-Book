@@ -13,7 +13,7 @@ Android lab mini project
   
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/krupalvora/Bill-Book/blob/main/LICENSE)
 
   
 ## Tech Stack
