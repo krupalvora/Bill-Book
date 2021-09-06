@@ -22,7 +22,7 @@ Android lab mini project
 
 
   
-## Documentation
+## Schema
 
     user{
 
