@@ -33,7 +33,7 @@ Android lab mini project
         item_name{
             id:name
         }
-        item_price{
+        product_price{
             id:price
         }
         item_code{
