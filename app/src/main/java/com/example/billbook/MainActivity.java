@@ -69,6 +69,14 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
         ok=(Button)findViewById(R.id.ok);
         editTextName=(EditText)findViewById(R.id.editTextName);
         editTextNumber=(EditText)findViewById(R.id.editTextNumber);
+        menu=(Button)findViewById(R.id.menu);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,User.class);
+                startActivity(intent);
+            }
+        });
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
