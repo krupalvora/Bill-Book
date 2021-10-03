@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Properties;
@@ -29,22 +26,15 @@ import javax.mail.internet.MimeMessage;
 
 
 public class Activity2<firebaseDatabase, databaseReference> extends AppCompatActivity {
-    private TextView fname, semail, scontact, x, total;
-    Button mail;
+    public TextView fname, semail, scontact, x, total;
+    public Button mail;
+    public String t;
     EditText EmailAddress, cname;
     Date date = new Date();
     public DBHandler db;
-
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2);
-
-        firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("sname");
-
         db=new DBHandler(this);
         Cursor cursor=db.fetchAllData();
         if(cursor.getCount()==0){
@@ -56,10 +46,11 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
                 String name = cursor.getString(0  );
                 fname.setText(name);
                 semail = findViewById(R.id.semail);
-                String email = cursor.getString(1);
+                String email = cursor.getString(2);
+                t=cursor.getString(2);
                 semail.setText(email);
                 scontact = findViewById(R.id.scontact);
-                String contact = cursor.getString(2);
+                String contact = cursor.getString(1);
                 scontact.setText(contact);
             }
         }
@@ -98,7 +89,7 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
                 try{
                     Message message1= new MimeMessage(session);
                     message1.setFrom(new InternetAddress(username));
-                    String Emails= EmailAddress.getText().toString()+","+semail.getText().toString();
+                    String Emails= EmailAddress.getText().toString()+","+t;
                     message1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(Emails));
                     message1.setSubject("Payment Reciept From BillBook");
                     message1.setText(messageToSend);
