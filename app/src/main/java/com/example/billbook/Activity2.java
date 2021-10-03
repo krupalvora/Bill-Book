@@ -1,5 +1,6 @@
 package com.example.billbook;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -32,6 +33,7 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
     Button mail;
     EditText EmailAddress, cname;
     Date date = new Date();
+    public DBHandler db;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -42,19 +44,25 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("sname");
-        fname = findViewById(R.id.fname);
-        String name = getIntent().getStringExtra("keyname");
-        fname.setText(name);
 
-        //String name = getIntent().getStringExtra("keyname");
-
-        semail = findViewById(R.id.semail);
-        String email = getIntent().getStringExtra("keysemail");
-        semail.setText(email);
-
-        scontact = findViewById(R.id.scontact);
-        String contact = getIntent().getStringExtra("keyscontact");
-        scontact.setText(contact);
+        db=new DBHandler(this);
+        Cursor cursor=db.fetchAllData();
+        if(cursor.getCount()==0){
+            Toast.makeText(getApplicationContext(),"No username",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            while (cursor.moveToNext()) {
+                fname = findViewById(R.id.fname);
+                String name = cursor.getString(0  );
+                fname.setText(name);
+                semail = findViewById(R.id.semail);
+                String email = cursor.getString(1);
+                semail.setText(email);
+                scontact = findViewById(R.id.scontact);
+                String contact = cursor.getString(2);
+                scontact.setText(contact);
+            }
+        }
 
         x = findViewById(R.id.x);
         ArrayList<String> items = (ArrayList<String>) getIntent().getSerializableExtra("keyitems");

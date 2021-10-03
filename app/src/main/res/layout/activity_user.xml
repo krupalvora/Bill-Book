@@ -7,57 +7,127 @@
     android:layout_height="match_parent"
     tools:context=".User">
 
-  <EditText
-      android:id="@+id/name"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:ems="10"
-      android:inputType="textPersonName"
-      android:minHeight="48dp"
-      android:text="Name"
-      app:layout_constraintBottom_toTopOf="@+id/name"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.077"
-      tools:ignore="MissingConstraints,NotSibling,DuplicateClickableBoundsCheck"
-      tools:layout_editor_absoluteX="30dp" />
+  <Button
+      android:id="@+id/save2"
+      android:layout_width="171dp"
+      android:layout_height="48dp"
+      android:text="ADD"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+      tools:ignore="MissingConstraints" />
 
   <EditText
-      android:id="@+id/contact"
+      android:id="@+id/editTextTextPersonName3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginBottom="12dp"
+      android:layout_marginTop="32dp"
       android:ems="10"
+      android:hint="Barcode"
       android:inputType="textPersonName"
       android:minHeight="48dp"
-      android:text="Contact"
-      app:layout_constraintBottom_toTopOf="@+id/contact"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.32"
-      tools:ignore="MissingConstraints,NotSibling,UnknownId"
-      tools:layout_editor_absoluteX="30dp" />
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
   <EditText
-      android:id="@+id/email"
+      android:id="@+id/editTextTextPersonName2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginTop="28dp"
       android:ems="10"
+      android:hint="Product Price"
       android:inputType="textPersonName"
       android:minHeight="48dp"
-      android:text="Email"
-      app:layout_constraintBottom_toTopOf="@+id/email"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.497"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+  <EditText
+      android:id="@+id/x_sname"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="32dp"
+      android:ems="10"
+      android:hint="Name"
+      android:inputType="textPersonName"
+      android:minHeight="48dp"
+      app:layout_constraintBottom_toTopOf="@+id/save"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/x_email"
+      app:layout_constraintVertical_bias="0.116"
+      tools:ignore="MissingConstraints,NotSibling,DuplicateClickableBoundsCheck" />
+
+  <EditText
+      android:id="@+id/x_contact"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="55dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="32dp"
+      android:ems="10"
+      android:hint="Contact"
+      android:inputType="textPersonName"
+      android:minHeight="48dp"
+      app:layout_constraintBottom_toTopOf="@+id/save"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.537"
-      tools:ignore="MissingConstraints,NotSibling"
-      tools:layout_editor_absoluteX="30dp" />
+      app:layout_constraintVertical_bias="0.0"
+      tools:ignore="MissingConstraints,NotSibling,UnknownId" />
+
+  <EditText
+      android:id="@+id/x_email"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="32dp"
+      android:layout_marginEnd="32dp"
+      android:layout_marginBottom="32dp"
+      android:ems="10"
+      android:hint="Email"
+      android:inputType="textPersonName"
+      android:minHeight="48dp"
+      app:layout_constraintBottom_toTopOf="@+id/save"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/x_contact"
+      app:layout_constraintVertical_bias="0.0"
+      tools:ignore="MissingConstraints,NotSibling" />
 
   <Button
       android:id="@+id/save"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Save"
+      android:layout_width="171dp"
+      android:layout_height="48dp"
+      android:layout_marginBottom="392dp"
+      android:text="Update"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       tools:ignore="MissingConstraints" />
+
+  <EditText
+      android:id="@+id/editTextTextPersonName"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="64dp"
+      android:ems="10"
+      android:hint="Product Name"
+      android:inputType="textPersonName"
+      android:minHeight="48dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.502"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
