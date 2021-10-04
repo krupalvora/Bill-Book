@@ -1,5 +1,8 @@
 package com.example.billbook;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -25,7 +28,7 @@ import javax.mail.internet.MimeMessage;
 
 
 
-public class Activity2<firebaseDatabase, databaseReference> extends AppCompatActivity {
+public class Activity2 extends AppCompatActivity {
     public TextView fname, semail, scontact, x, total;
     public Button mail;
     public String t;
@@ -54,7 +57,6 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
                 scontact.setText(contact);
             }
         }
-
         x = findViewById(R.id.x);
         ArrayList<String> items = (ArrayList<String>) getIntent().getSerializableExtra("keyitems");
         x.setText(String.valueOf(items));
@@ -95,14 +97,25 @@ public class Activity2<firebaseDatabase, databaseReference> extends AppCompatAct
                     message1.setText(messageToSend);
                     Transport.send(message1);
                     Toast.makeText(getApplicationContext(), "email sent successfully",Toast.LENGTH_LONG).show();
-
+                    Intent intent = new Intent(Activity2.this, MainActivity.class);
+                    startActivity(intent);
                 }catch (MessagingException e){
-                    throw new RuntimeException(e);
+                    new AlertDialog.Builder(Activity2.this)
+                            .setIcon(android.R.drawable.ic_delete)
+                            .setTitle("Invalid Email Address")
+                            .setMessage("Set your correct gmail address or check customer email address")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(Activity2.this, User.class);
+                                    startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
                 }
-
             };
         });
-
         StrictMode.ThreadPolicy policy= new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }

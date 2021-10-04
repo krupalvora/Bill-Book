@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,13 +21,8 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-
-
-public class MainActivity<firebaseDatabase, databaseReference> extends AppCompatActivity implements View.OnClickListener {
-
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public DBHandler db;
     private static final String TAG = "";
     Button scanBtn;
@@ -42,21 +36,12 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
      ArrayList<String> x = new ArrayList<String>();
     ArrayList<Integer> x1 = new ArrayList<Integer>();
     ArrayList<String> x2 = new ArrayList<String>();
-//    String[] code1 = {"H201", "9788189725624", "KH40", "EM216640885IN", "123456789012", "8906108610832"};
-//    String[] name = {"hing", "book", "Masala khari", "SpeedPost", "Sample_Product", "Zebronics Keyboard"};
-//    int[] price = {20, 100, 40, 90, 100, 250};
-    String[] code1 = {"H201"};
-    String[] name = {"hin"};
-    int[] price = {20};
-   List<String> code = new ArrayList<>(Arrays.asList(code1));
+    ArrayList<String> code1= new ArrayList<String>();
+    ArrayList<Integer> price= new ArrayList<Integer>();
+    ArrayList<String> name= new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
-        ArrayList<String> code1= new ArrayList<String>();
-        ArrayList<Integer> price= new ArrayList<Integer>();
-        ArrayList<String> name= new ArrayList<String>();
         db = new DBHandler(this);
         Cursor pdetails = db.fetchDetails();
         if (pdetails.getCount() == 0) {
@@ -69,10 +54,8 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
                 name.add(c);
                 price.add(p);
                 code1.add(b);
-                Log.e(TAG, "---------------------------------------------------------------ufguywvbufb---" +c+"--" + p + "---"+b);
             }
         }
-        Log.e(TAG, "---------------------------------------------------------------ufguywvbufb---" +name+"--" + price + "---"+code1);
             setContentView(R.layout.activity_main);
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             textView = (TextView) findViewById(R.id.textView2);
@@ -81,8 +64,6 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
             editTextName = (EditText) findViewById(R.id.editTextName);
             editTextNumber = (EditText) findViewById(R.id.editTextNumber);
             menu = (Button) findViewById(R.id.menu);
-
-
             menu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,7 +86,6 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
             scanBtn = findViewById(R.id.scanBtn);
             scanBtn.setOnClickListener(this);
         }
-
         private void additem () {
             String newitem = editTextName.getText().toString();
             int newprice = Integer.parseInt(editTextNumber.getText().toString());
@@ -113,17 +93,13 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
             x1.add(newprice);
             x2.add(newitem + " -> " + newprice + " /-");
             sum = 0;
-
             ListView listView = findViewById(R.id.listView);
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, x2);
             listView.setAdapter(adapter);
             listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
                     final int which_item = position;
-                    Log.d(TAG, "???????????????????????????????????????????" + which_item);
-
                     new AlertDialog.Builder(MainActivity.this)
                             .setIcon(android.R.drawable.ic_delete)
                             .setTitle("Are you sure ?")
@@ -146,12 +122,10 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
                     return true;
                 }
             });
-            Log.d(TAG, "???????????????????????????????????????????" + x + x1 + x2);
             sum = 0;
             for (int i : x1)
                 sum += i;
             textView.setText("Total : " + String.valueOf(new Integer(sum)) + "/-");
-
         }
         private void screenshot () {
             Intent intent = new Intent(MainActivity.this, Activity2.class);
@@ -163,7 +137,6 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
             x1.clear();
             x2.clear();
             int sum = 0;
-
         }
         @Override
         public void onClick (View v){
@@ -180,26 +153,23 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
         @Override
         protected void onActivityResult ( int requestCode, int resultCode, Intent data){
             IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+
             if (result != null) {
                 if (result.getContents() != null) {
                     sum = 0;
                     String txt = result.getContents().toString();
-                    if (code.contains(txt)) {
-                        int count = code.indexOf(txt);
-                        x.add(name[count]);
-                        x1.add(price[count]);
-                        x2.add(name[count] + " -> " + price[count] + " /-");
-                        Log.d(TAG, "???????????????????????????????????????????" + x2);
+                    if (code1.contains(txt)) {
+                        int count = code1.indexOf(txt);
+                        x.add(name.get(count));
+                        x1.add(price.get(count));
+                        x2.add(name.get(count) + " -> " + price.get(count) + " /-");
                         ListView listView = findViewById(R.id.listView);
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, x2);
                         listView.setAdapter(adapter);
                         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                             @Override
                             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
                                 final int which_item = position;
-                                Log.d(TAG, "???????????????????????????????????????????" + which_item);
-
                                 new AlertDialog.Builder(MainActivity.this)
                                         .setIcon(android.R.drawable.ic_delete)
                                         .setTitle("Are you sure ?")
@@ -222,8 +192,6 @@ public class MainActivity<firebaseDatabase, databaseReference> extends AppCompat
                                 return true;
                             }
                         });
-
-
                     }
                     for (int i : x1)
                         sum += i;

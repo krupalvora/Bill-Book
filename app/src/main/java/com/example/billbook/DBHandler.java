@@ -75,7 +75,6 @@ public class DBHandler extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor pdetails = db.rawQuery("select * from details ", null);
         Log.e(TAG, "--555555555555555555555555555555555555555555555555555555555555555555555ufguywvbuf"+pdetails);
-
         return pdetails;
     }
 }

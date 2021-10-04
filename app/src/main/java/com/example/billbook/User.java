@@ -1,5 +1,6 @@
 package com.example.billbook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +45,10 @@ public class User extends AppCompatActivity {
                 Toast.makeText(User.this, "Details has been added.", Toast.LENGTH_SHORT).show();
                 sname.setText("");
                 contact.setText("");
-                email.setText(""); }
+                email.setText("");
+                Intent intent = new Intent(User.this, MainActivity.class);
+                startActivity(intent);
+            }
         });
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +65,9 @@ public class User extends AppCompatActivity {
                 }
                 dbHandler.addItem(j_sname, j_contact, j_email);
                 Toast.makeText(User.this, "Product has been added.", Toast.LENGTH_SHORT).show();
+                finish();
+                Intent intent = new Intent(User.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
