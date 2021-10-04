@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
             setContentView(R.layout.activity_main);
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            Log.e(TAG,"---------------------------------"+name);
             textView = (TextView) findViewById(R.id.textView2);
             button = (Button) findViewById(R.id.button);
             ok = (Button) findViewById(R.id.ok);
