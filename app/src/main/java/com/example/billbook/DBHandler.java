@@ -74,7 +74,13 @@ public class DBHandler extends SQLiteOpenHelper{
     public Cursor fetchDetails(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor pdetails = db.rawQuery("select * from details ", null);
-        Log.e(TAG, "--555555555555555555555555555555555555555555555555555555555555555555555ufguywvbuf"+pdetails);
         return pdetails;
     }
+    public void delItem(String pname) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Log.e(TAG,"++++++++++++++++++++++++++++++++++++++"+pname);
+        db.delete(DETAILS,"pname=?",new String[]{pname});
+        db.close();
+    }
+
 }
