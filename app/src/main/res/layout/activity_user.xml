@@ -13,7 +13,7 @@
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="6dp"
         android:text="Shop Details"
         android:textAlignment="center"
         android:textColor="#040404"
@@ -21,10 +21,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/x_contact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         tools:text="Shop Details" />
 
     <EditText
@@ -33,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="4dp"
         android:ems="10"
         android:hint="Contact"
         android:inputType="number"
@@ -51,14 +49,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/x_sname"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints,NotSibling" />
 
@@ -117,7 +115,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Product Name"
         android:inputType="textPersonName"
@@ -164,35 +162,38 @@
         android:layout_width="150dp"
         android:layout_height="49dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="16dp"
         android:text="DELETE"
+        app:layout_constraintBottom_toTopOf="@+id/about"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="617dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/add"
         android:layout_width="150dp"
         android:layout_height="49dp"
         android:layout_marginStart="20dp"
+        android:layout_marginBottom="16dp"
         android:text="ADD"
+        app:layout_constraintBottom_toTopOf="@+id/about"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="617dp" />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/about"
-        android:layout_width="353dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
         android:text="About "
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

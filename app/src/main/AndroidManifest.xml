@@ -22,6 +22,7 @@
             android:name=".User"
             android:exported="true" />
         <activity android:name=".Activity2" />
+        <activity android:name=".About" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >

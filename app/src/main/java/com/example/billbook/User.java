@@ -5,17 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class User extends AppCompatActivity {
-    public Button save,add,delete;
+    public Button save,add,delete,about;
     public EditText sname,email,contact,pname,pprice,pbarcode;
     public DBHandler dbHandler;
-    public TextView about1;
-    String s="About \nHow to use:\n Step1: Add details\n    Step2: Add product details\n";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +24,7 @@ public class User extends AppCompatActivity {
         pprice = findViewById(R.id.pprice);
         pbarcode = findViewById(R.id.pbarcode);
         delete = findViewById(R.id.delete);
-        about1=findViewById(R.id.about);
-        about1.setText(s);
+        about=findViewById(R.id.about);
         save=findViewById(R.id.save);
         add = findViewById(R.id.add);
         dbHandler = new DBHandler(User.this);
@@ -89,6 +85,14 @@ public class User extends AppCompatActivity {
                 Toast.makeText(User.this, "Product has been Deleted.", Toast.LENGTH_SHORT).show();
                 finish();
                 Intent intent = new Intent(User.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(User.this, About.class);
                 startActivity(intent);
             }
         });
