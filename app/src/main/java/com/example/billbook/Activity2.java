@@ -1,11 +1,14 @@
 package com.example.billbook;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -84,8 +87,17 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = "mg9417054@gmail.com";
                 final String password = "eHi3mohwier";
-                String x="Null";
-                String messageToSend = "Dear "+cname.getText().toString()+" Details of invoice from  "+fname.getText().toString()+" Of your Purchase on "+date+" is \n"+x +"\n Total Amount is: "+total.getText().toString()+"\n -For bill related query \n           "+semail.getText().toString()+"\n           "+scontact.getText().toString()+"\n\n\n\n -Powered By BillBook.com";
+                String x="";
+                for (int j = 0; j < items.size(); j++) {
+                    x=x+items.get(j)+"\n";
+                    Log.e(TAG,"==============================="+j+x);
+                }
+                //Log.e(TAG,"===============================",x);
+                String messageToSend = "Dear "+cname.getText().toString()+","+"\nDetails of invoice from  "
+                        +fname.getText().toString()+" Of your Purchase on "+date
+                        +" is \n"+x +"\n Total Amount is: "+total.getText().toString()+
+                        "\n -For bill related query \n           "+semail.getText().toString()+"\n " +
+                        "          "+scontact.getText().toString()+"\n\n\n\n -Powered By BillBook.com";
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");

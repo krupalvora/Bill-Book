@@ -21,6 +21,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:drawableRight="@drawable/ic_baseline_send_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.323"
@@ -33,7 +34,6 @@
         android:layout_height="41dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="5dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#0E0E0E"
@@ -52,7 +52,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="16sp"
@@ -67,17 +67,17 @@
         android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="1dp"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/scontact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
     <TextView
@@ -113,7 +113,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:startIconDrawable="@drawable/common_google_signin_btn_icon_light">
+        app:startIconDrawable="@drawable/ic_person">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cname"
@@ -137,14 +137,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:startIconDrawable="@drawable/common_google_signin_btn_icon_dark">
+        app:startIconDrawable="@drawable/ic_mail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/EmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="wrap_content"
             android:background="#EDEBEB"
-            android:textColor="#FAF8F8" />
+            android:textColor="#050505" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView

@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int newprice = Integer.parseInt(editTextNumber.getText().toString());
             x.add(newitem);
             x1.add(newprice);
-            x2.add("    "+newitem + "                                           " + newprice + " /-");
+            x2.add("    "+newitem + "   -  " + newprice + " /-");
             sum = 0;
             ListView listView = findViewById(R.id.listView);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, x2) {
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         int count = code1.indexOf(txt);
                         x.add(name.get(count));
                         x1.add(price.get(count));
-                        x2.add("    "+name.get(count) + "              " + price.get(count) + " /-");
+                        x2.add("    "+name.get(count) + "   -   " + price.get(count) + " /-");
                         ListView listView = findViewById(R.id.listView);
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, x2);
                         listView.setAdapter(adapter);
