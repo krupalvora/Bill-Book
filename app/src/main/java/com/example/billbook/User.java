@@ -14,7 +14,7 @@ public class User extends AppCompatActivity {
     public Button save,add,delete;
     public EditText sname,email,contact,pname,pprice,pbarcode;
     public DBHandler dbHandler;
-    public TextView about;
+    public TextView about1;
     String s="About \nHow to use:\n Step1: Add details\n    Step2: Add product details\n";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,8 @@ public class User extends AppCompatActivity {
         pprice = findViewById(R.id.pprice);
         pbarcode = findViewById(R.id.pbarcode);
         delete = findViewById(R.id.delete);
-        about=findViewById(R.id.about);
-        about.setText(s);
+        about1=findViewById(R.id.about);
+        about1.setText(s);
         save=findViewById(R.id.save);
         add = findViewById(R.id.add);
         dbHandler = new DBHandler(User.this);

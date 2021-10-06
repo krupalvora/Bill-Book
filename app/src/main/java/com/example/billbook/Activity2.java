@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,9 +31,12 @@ import javax.mail.internet.MimeMessage;
 
 
 public class Activity2 extends AppCompatActivity {
-    public TextView fname, semail, scontact, x, total;
+    public TextView fname, semail, scontact, total;
     public Button mail;
     public String t;
+    public RecyclerView recyclerView;
+    public RecyclerView.LayoutManager layoutManager;
+    public RecyclerView.Adapter adapter;
     EditText EmailAddress, cname;
     Date date = new Date();
     public DBHandler db;
@@ -57,12 +62,17 @@ public class Activity2 extends AppCompatActivity {
                 scontact.setText(contact);
             }
         }
-        x = findViewById(R.id.x);
         ArrayList<String> items = (ArrayList<String>) getIntent().getSerializableExtra("keyitems");
-        x.setText(String.valueOf(items));
+        recyclerView = (RecyclerView) findViewById(R.id.x);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        adapter = new MainAdapter(items);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
 
         total = findViewById(R.id.total);
-        String stotal = getIntent().getStringExtra("keysum");
+        String stotal = "Total : "+getIntent().getStringExtra("keysum")+"/-";
         total.setText(stotal);
 
         cname = findViewById(R.id.cname);
@@ -74,7 +84,8 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = "mg9417054@gmail.com";
                 final String password = "eHi3mohwier";
-                String messageToSend = "Dear "+cname.getText().toString()+" Details of invoice from  "+fname.getText().toString()+" Of your Purchase on "+date+" is \n"+x.getText().toString()+"\n Total Amount is: "+total.getText().toString()+"\n -For bill related query \n           "+semail.getText().toString()+"\n           "+scontact.getText().toString()+"\n\n\n\n -Powered By BillBook.com";
+                String x="Null";
+                String messageToSend = "Dear "+cname.getText().toString()+" Details of invoice from  "+fname.getText().toString()+" Of your Purchase on "+date+" is \n"+x +"\n Total Amount is: "+total.getText().toString()+"\n -For bill related query \n           "+semail.getText().toString()+"\n           "+scontact.getText().toString()+"\n\n\n\n -Powered By BillBook.com";
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");

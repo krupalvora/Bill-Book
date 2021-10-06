@@ -7,7 +7,9 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -93,10 +95,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int newprice = Integer.parseInt(editTextNumber.getText().toString());
             x.add(newitem);
             x1.add(newprice);
-            x2.add(newitem + " -> " + newprice + " /-");
+            x2.add("    "+newitem + "                                           " + newprice + " /-");
             sum = 0;
             ListView listView = findViewById(R.id.listView);
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, x2);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, x2) {
+                @Override
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    View view = super.getView(position, convertView, parent);
+                    TextView tv = (TextView) view.findViewById(android.R.id.text1);
+
+                    // Set the text size 25 dip for ListView each item
+                    tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP,20);
+
+                    // Return the view
+                    return view;
+                }
+            };
             listView.setAdapter(adapter);
             listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
@@ -164,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         int count = code1.indexOf(txt);
                         x.add(name.get(count));
                         x1.add(price.get(count));
-                        x2.add(name.get(count) + " -> " + price.get(count) + " /-");
+                        x2.add("    "+name.get(count) + "              " + price.get(count) + " /-");
                         ListView listView = findViewById(R.id.listView);
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, x2);
                         listView.setAdapter(adapter);
