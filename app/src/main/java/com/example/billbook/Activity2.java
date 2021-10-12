@@ -36,7 +36,7 @@ import javax.mail.internet.MimeMessage;
 public class Activity2 extends AppCompatActivity {
     public TextView fname, semail, scontact, total;
     public Button mail;
-    public String t;
+    public String t,s_email,s_contact;
     public RecyclerView recyclerView;
     public RecyclerView.LayoutManager layoutManager;
     public RecyclerView.Adapter adapter;
@@ -56,13 +56,13 @@ public class Activity2 extends AppCompatActivity {
                 fname = findViewById(R.id.fname);
                 String name = cursor.getString(0  );
                 fname.setText(name);
-                semail = findViewById(R.id.semail);
-                String email = cursor.getString(2);
+                //semail = findViewById(R.id.semail);
+                 s_email = cursor.getString(2);
                 t=cursor.getString(2);
-                semail.setText(email);
-                scontact = findViewById(R.id.scontact);
-                String contact = cursor.getString(1);
-                scontact.setText(contact);
+                //semail.setText(email);
+                //scontact = findViewById(R.id.scontact);
+                 s_contact = cursor.getString(1);
+                //scontact.setText(contact);
             }
         }
         ArrayList<String> items = (ArrayList<String>) getIntent().getSerializableExtra("keyitems");
@@ -96,8 +96,8 @@ public class Activity2 extends AppCompatActivity {
                 String messageToSend = "Dear "+cname.getText().toString()+","+"\nDetails of invoice from  "
                         +fname.getText().toString()+" Of your Purchase on "+date
                         +" is \n"+x +"\n Total Amount is: "+total.getText().toString()+
-                        "\n -For bill related query \n           "+semail.getText().toString()+"\n " +
-                        "          "+scontact.getText().toString()+"\n\n\n\n -Powered By BillBook.com";
+                        "\n -For bill related query \n           "+s_email+"\n " +
+                        "          "+s_contact+"\n\n\n\n -Powered By BillBook.com";
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");
@@ -114,7 +114,7 @@ public class Activity2 extends AppCompatActivity {
                 try{
                     Message message1= new MimeMessage(session);
                     message1.setFrom(new InternetAddress(username));
-                    String Emails= EmailAddress.getText().toString()+","+t;
+                    String Emails= EmailAddress.getText().toString()+","+s_email;
                     message1.setRecipients(Message.RecipientType.TO, InternetAddress.parse(Emails));
                     message1.setSubject("Payment Reciept From BillBook");
                     message1.setText(messageToSend);
