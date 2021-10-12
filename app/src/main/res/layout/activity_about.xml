@@ -7,33 +7,6 @@
     android:background="#E3DBDB"
     >
 
-<!--    <TextView-->
-<!--        android:id="@+id/about_title"-->
-<!--        android:layout_width="343dp"-->
-<!--        android:layout_height="36dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:text="About"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textColor="#090909"-->
-<!--        android:textSize="34sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/about_text"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
-    <!--    <VideoView-->
-<!--        android:id="@+id/videoview"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="256dp"-->
-<!--        android:layout_marginStart="32dp"-->
-<!--        android:layout_marginEnd="32dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.0"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
-
     <TextView
         android:id="@+id/about_text"
         android:layout_width="337dp"
