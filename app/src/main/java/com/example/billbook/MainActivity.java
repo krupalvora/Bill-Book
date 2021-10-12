@@ -209,6 +209,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         });
                     }
+                    else {
+                        Toast.makeText(this, "Product Not Found", Toast.LENGTH_LONG).show();
+                    }
+
                     for (int i : x1)
                         sum += i;
                     textView.setText("Total : " + String.valueOf(new Integer(sum)) + "/-");
