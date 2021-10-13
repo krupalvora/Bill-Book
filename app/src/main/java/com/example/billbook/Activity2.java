@@ -31,8 +31,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-
-
 public class Activity2 extends AppCompatActivity {
     public TextView fname, semail, scontact, total;
     public Button mail;
@@ -77,14 +75,24 @@ public class Activity2 extends AppCompatActivity {
         total = findViewById(R.id.total);
         String stotal = "Total : "+getIntent().getStringExtra("keysum")+"/-";
         total.setText(stotal);
-
         cname = findViewById(R.id.cname);
-
         EmailAddress = findViewById(R.id.EmailAddress);
+
+
         mail = findViewById(R.id.mail);
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.e(TAG,"________________hhhioh______"+cname.getText().toString()+"$$$"+cname.getText().toString().length());
+                if (cname.getText().toString().length()==0) {
+                    new AlertDialog.Builder(Activity2.this)
+                            .setIcon(android.R.drawable.ic_delete)
+                            .setTitle("Invalid Entry")
+                            .setMessage("Please enter all input fields")
+                            .setNegativeButton("OK", null)
+                            .show();
+                    return;
+                }
                 final String username = "mg9417054@gmail.com";
                 final String password = "eHi3mohwier";
                 String x="";

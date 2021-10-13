@@ -28,14 +28,14 @@
         android:layout_height="188dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:autoPlay="true"
+        app:autoPlay="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"
         app:showYouTubeButton="false"
-        app:videoId="dE1P4zDhhqw">
+        app:videoId="_BwAiec6mDA">
 
     </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 </androidx.constraintlayout.widget.ConstraintLayout>

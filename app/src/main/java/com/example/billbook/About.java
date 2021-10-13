@@ -14,7 +14,7 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        String s="Steps-\n1: Click on > button\n" +
+        String s="Steps-\n1: Click on Details >> button\n" +
                 "2:  Set your username, email, contact number\n" +
                 "3:  In that same section add your product details .\n" +
                 "4:  To delete product details just add product name\n" +

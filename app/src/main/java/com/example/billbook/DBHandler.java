@@ -1,13 +1,10 @@
 package com.example.billbook;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 public class DBHandler extends SQLiteOpenHelper{
     private static final String DB_NAME = "billbook";
@@ -78,7 +75,7 @@ public class DBHandler extends SQLiteOpenHelper{
     }
     public void delItem(String pname) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Log.e(TAG,"++++++++++++++++++++++++++++++++++++++"+pname);
+        //Log.e(TAG,"++++++++++++++++++++++++++++++++++++++"+pname);
         db.delete(DETAILS,"pname=?",new String[]{pname});
         db.close();
     }

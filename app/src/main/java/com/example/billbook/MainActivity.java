@@ -50,18 +50,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (pdetails.getCount() == 0) {
             Toast.makeText(getApplicationContext(), "No data", Toast.LENGTH_SHORT).show();
         } else {
+            try{
             while (pdetails.moveToNext()) {
-                String c=pdetails.getString(0);
-                Integer p= Integer.valueOf(pdetails.getString(1));
-                String b=pdetails.getString(2);
+                String c = pdetails.getString(0);
+                Integer p = Integer.valueOf(pdetails.getString(1));
+                String b = pdetails.getString(2);
                 name.add(c);
                 price.add(p);
-                code1.add(b);
+                code1.add(b);}
+            }
+            catch(Exception e){
+                Log.e(TAG,"---------------------------------"+e);
             }
         }
-            setContentView(R.layout.activity_main);
+        Log.e(TAG,"----------------00000000000000000000000000-----------------"+name);
+
+        setContentView(R.layout.activity_main);
             this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-            Log.e(TAG,"---------------------------------"+name);
+
             textView = (TextView) findViewById(R.id.textView2);
             button = (Button) findViewById(R.id.button);
             ok = (Button) findViewById(R.id.ok);

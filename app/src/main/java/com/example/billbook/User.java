@@ -1,7 +1,11 @@
 package com.example.billbook;
 
+import static android.content.ContentValues.TAG;
+
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,10 +63,16 @@ public class User extends AppCompatActivity {
                 String j_sname = pname.getText().toString();
                 String j_contact = pprice.getText().toString();
                 String j_email = pbarcode.getText().toString();
+                Log.e(TAG,"--------------+++++++++++++++++++++++++++++--------------"+j_contact+"+");
 
-                if (j_sname.isEmpty() && j_contact.isEmpty() && j_email.isEmpty()) {
-                    Toast.makeText(User.this, "Please enter all the data..", Toast.LENGTH_SHORT).show();
-                    return;
+                if (j_sname.isEmpty() || j_contact.isEmpty() || j_email.isEmpty()) {
+                    new AlertDialog.Builder(User.this)
+                            .setIcon(android.R.drawable.ic_delete)
+                            .setTitle("Invalid Entry")
+                            .setMessage("Please enter all input fields")
+                            .setNegativeButton("OK", null)
+                            .show();
+                    return ;
                 }
                 dbHandler.addItem(j_sname, j_contact, j_email);
                 Toast.makeText(User.this, "Product has been added.", Toast.LENGTH_SHORT).show();
