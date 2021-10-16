@@ -7,6 +7,18 @@
     android:background="#E3DBDB"
     tools:context=".User">
 
+    <ImageView
+        android:layout_width="406dp"
+        android:layout_height="407dp"
+        android:alpha="0.1"
+        android:background="@drawable/bimage"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="348dp"

@@ -13,6 +13,18 @@
     app:layout_constraintBottom_toTopOf="parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="406dp"
+        android:layout_height="407dp"
+        android:alpha="0.1"
+        android:background="@drawable/bimage"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
+
     <Button
         android:id="@+id/scanBtn"
         android:layout_width="153dp"

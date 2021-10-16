@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         db = new DBHandler(this);
         Cursor pdetails = db.fetchDetails();
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.black));
+
         if (pdetails.getCount() == 0) {
             Toast.makeText(getApplicationContext(), "No data", Toast.LENGTH_SHORT).show();
         } else {
@@ -96,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             scanBtn = findViewById(R.id.scanBtn);
             scanBtn.setOnClickListener(this);
         }
+        
+
         private void additem () {
             String newitem = editTextName.getText().toString();
             int newprice = Integer.parseInt(editTextNumber.getText().toString());
