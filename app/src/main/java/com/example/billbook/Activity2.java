@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,6 +47,9 @@ public class Activity2 extends AppCompatActivity {
         setContentView(R.layout.activity2);
         db=new DBHandler(this);
         Cursor cursor=db.fetchAllData();
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(Activity2.this,R.color.black));
+
         if(cursor.getCount()==0){
             Toast.makeText(getApplicationContext(),"No username",Toast.LENGTH_SHORT).show();
         }

@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class User extends AppCompatActivity {
     public Button save,add,delete,about;
@@ -32,6 +33,7 @@ public class User extends AppCompatActivity {
         save=findViewById(R.id.save);
         add = findViewById(R.id.add);
         dbHandler = new DBHandler(User.this);
+        getWindow().setStatusBarColor(ContextCompat.getColor(User.this,R.color.black));
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

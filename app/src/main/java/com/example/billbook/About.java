@@ -5,6 +5,7 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class About extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        getWindow().setStatusBarColor(ContextCompat.getColor(About.this,R.color.black));
         String s="Steps-\n1: Click on Details >> button\n" +
                 "2:  Set your username, email, contact number\n" +
                 "3:  In that same section add your product details .\n" +
