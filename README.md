@@ -18,7 +18,7 @@ Android lab mini project
   
 ## Tech Stack
 
-**TEch:** Android Studio, Java, Firebase
+**TEch:** Android Studio, Java, Mysqlite
 
 
 
