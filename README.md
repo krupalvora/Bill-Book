@@ -21,36 +21,6 @@ Android lab mini project
 **TEch:** Android Studio, Java, Firebase
 
 
-  
-## Schema
-
-    user{
-
-        uname:  
-        contact:
-        email:
-        shop_name:
-        item_name{
-            id:name
-        }
-        product_price{
-            id:price
-        }
-        item_code{
-            id:code
-        }
-        sales{
-             id{
-             customer_name:name
-             customer_email:email
-             date:date
-             total:total
-             items:ListOfItems
-            }
-        }
-    }
-
-
 
 ## Used By
 
