@@ -7,215 +7,244 @@
     android:background="#E3DBDB"
     tools:context=".User">
 
+
     <ImageView
-        android:layout_width="406dp"
-        android:layout_height="407dp"
-        android:alpha="0.1"
-        android:background="@drawable/bimage"
-        android:scaleType="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="406dp"
+                android:layout_height="407dp"
+                android:alpha="0.1"
+                android:background="@drawable/bimage"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="348dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="6dp"
-        android:text="Shop Details"
-        android:textAlignment="center"
-        android:textColor="#040404"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/x_sname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Shop Details" />
+        <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="348dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="6dp"
+                    android:text="Shop Details"
+                    android:textAlignment="center"
+                    android:textColor="#040404"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/x_sname"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Shop Details" />
 
-    <EditText
-        android:id="@+id/x_sname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:hint="  Shop Name"
-        android:inputType="textPersonName"
-        android:drawableLeft="@drawable/ic_shop"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/x_email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,NotSibling,UnknownId" />
+        <EditText
+                    android:id="@+id/x_sname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="4dp"
+                    android:ems="10"
+                    android:hint="  Shop Name"
+                    android:inputType="textPersonName"
+                    android:drawableLeft="@drawable/ic_shop"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/x_email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints,NotSibling,UnknownId" />
 
-    <EditText
-        android:id="@+id/x_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="  Email"
-        android:inputType="textEmailAddress"
-        android:drawableLeft="@drawable/ic_mail"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/x_contact"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,NotSibling" />
+        <EditText
+                    android:id="@+id/x_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="8dp"
+                    android:ems="10"
+                    android:hint="  Email"
+                    android:inputType="textEmailAddress"
+                    android:drawableLeft="@drawable/ic_mail"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/x_contact"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints,NotSibling" />
 
-    <EditText
-        android:id="@+id/x_contact"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="  Contact Number"
-        android:inputType="number"
-        android:maxLength="10"
-        android:drawableLeft="@drawable/ic_contact"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints,NotSibling,DuplicateClickableBoundsCheck" />
+        <EditText
+                    android:id="@+id/x_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:hint="  Contact Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:drawableLeft="@drawable/ic_contact"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/save"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints,NotSibling,DuplicateClickableBoundsCheck" />
 
-    <Button
-        android:id="@+id/save"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="76dp"
-        android:text="Update"
-        android:drawableLeft="@drawable/ic_update"
-        app:layout_constraintBottom_toTopOf="@+id/pname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <Button
+                    android:id="@+id/save"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="76dp"
+                    android:text="Update"
+                    android:drawableLeft="@drawable/ic_update"
+                    app:layout_constraintBottom_toTopOf="@+id/pname"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="348dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:text="Product Details"
-        android:textAlignment="center"
-        android:textColor="#020202"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save"
-        tools:text="Product Details" />
+        <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="348dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="32dp"
+                    android:text="Product Details"
+                    android:textAlignment="center"
+                    android:textColor="#020202"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/save"
+                    tools:text="Product Details" />
 
-    <EditText
-        android:id="@+id/pname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="12dp"
-        android:ems="10"
-        android:hint="  Product Name"
-        android:drawableLeft="@drawable/ic_product"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/pprice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+                    android:id="@+id/pname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="12dp"
+                    android:ems="10"
+                    android:hint="  Product Name"
+                    android:drawableLeft="@drawable/ic_product"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/pprice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/pprice"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="12dp"
-        android:ems="10"
-        android:hint="  Product Price"
-        android:inputType="number"
-        android:drawableLeft="@drawable/ic_price"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/pbarcode"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText        android:id="@+id/pprice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="12dp"
+                    android:ems="10"
+                    android:hint="  Product Price"
+                    android:inputType="number"
+                    android:drawableLeft="@drawable/ic_price"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/pbarcode"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/pbarcode"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="  Barcode"
-        android:drawableLeft="@drawable/ic_scan"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+                    android:id="@+id/pbarcode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:hint="  Barcode"
+                    android:drawableLeft="@drawable/ic_scan"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@+id/delete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="150dp"
-        android:layout_height="49dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="16dp"
-        android:text="DELETE"
-        app:layout_constraintBottom_toTopOf="@+id/about"
-        android:drawableLeft="@drawable/ic_delete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <Button
+                    android:id="@+id/delete"
+                    android:layout_width="150dp"
+                    android:layout_height="49dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="DELETE"
+                    app:layout_constraintBottom_toTopOf="@+id/about"
+                    android:drawableLeft="@drawable/ic_delete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.95"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="150dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="16dp"
-        android:text="ADD"
-        android:drawableLeft="@drawable/ic_add"
-        app:layout_constraintBottom_toTopOf="@+id/about"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <Button        android:id="@+id/add"
+                    android:layout_width="150dp"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="ADD"
+                    android:drawableLeft="@drawable/ic_add"
+                    app:layout_constraintBottom_toTopOf="@+id/about"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.049"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
+    <Button    android:id="@+id/about"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="About "
+            android:drawableRight="@drawable/ic_about"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/about"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:text="About "
-        android:drawableRight="@drawable/ic_about"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
