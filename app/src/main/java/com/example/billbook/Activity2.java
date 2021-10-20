@@ -97,8 +97,8 @@ public class Activity2 extends AppCompatActivity {
                             .show();
                     return;
                 }
-                final String username = "mg9417054@gmail.com";
-                final String password = "eHi3mohwier";
+                final String username = "*********";
+                final String password = "*********";
                 String x="";
                 for (int j = 0; j < items.size(); j++) {
                     x=x+items.get(j)+"\n";
