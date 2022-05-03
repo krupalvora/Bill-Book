@@ -2,13 +2,13 @@
 # Bill-Book
 
 BillBook a QR+Barcode Scanner integrated billing application for Easy, Fast & Accurate paperless billing.
-```
+
 1) Add, Delete Product.
 2) Add your Business Details.
 3) Scan Products Barcode, Qr code.
 4) Add product Manually if not found.
 5)Generate Final Bill and Mail to Customer.
-```
+
 
 # Watch usecase & Dem video
 
@@ -17,7 +17,7 @@ https://www.youtube.com/watch?v=_BwAiec6mDA
   
 ## Tech Stack
 
-**TEch:** Android Studio, Java, Mysqlite
+Android Studio, Java, Mysqlite
    
 ## Screenshots
 
