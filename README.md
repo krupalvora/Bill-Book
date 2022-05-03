@@ -26,7 +26,6 @@ Android Studio, Java, Mysqlite
 ![](https://github.com/krupalvora/Bill-Book/blob/main/images/bb3.jpg?raw=true)
 ![](https://github.com/krupalvora/Bill-Book/blob/main/images/bb4.jpg?raw=true)
 ![](https://github.com/krupalvora/Bill-Book/blob/main/images/bb5.jpg?raw=true)
-![](https://github.com/krupalvora/Bill-Book/blob/main/images/bb6.jpg?raw=true)
 ## Authors
 
 - [@Vivek Vadhiya](https://github.com/vivek992)
